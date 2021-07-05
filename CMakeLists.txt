@@ -9,7 +9,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 link_directories("vendor/SFML/lib")
 
-add_executable(Pendulum Pendulum.cpp)
+file(GLOB Psrc "*.h" "*.cpp")
+add_executable(Pendulum ${Psrc})
 
 target_link_libraries(Pendulum debug sfml-graphics-d.lib optimized sfml-graphics.lib)
 target_link_libraries(Pendulum debug sfml-window-d.lib optimized sfml-window.lib)
